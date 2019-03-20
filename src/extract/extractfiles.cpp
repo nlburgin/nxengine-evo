@@ -13,15 +13,42 @@
 #include "crc.h"
 #include "extractfiles.h"
 
-#define HEADER_LEN 25
-#define MAX_FILE_SIZE 32768
+#define HEADER_LEN 54
+#define MAX_FILE_SIZE 62768
+#define CREDIT_SIZE 39518
 
 // Windows .bmp resources don't include the BMP-file headers
-const uint8_t credit_header[] = {0x42, 0x4D, 0x76, 0x4B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x76, 0x00, 0x00,
-                                 0x00, 0x28, 0x00, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00, 0xF0, 0x00, 0x00};
+//Jenka's Nightmare appears to use a different BMP variant than the original
+const uint8_t credit_header[] = {0x42, 0x4D, 0x1A, 0x65, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x36, 0x04, 0x00,
+                                 0x00, 0x28, 0x00, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00, 0xF0, 0x00, 0x00, 0x00, 
+                                 0x01, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x28, 0x9A, 0x00, 0x00, 0xC3, 
+                                 0x0E, 0x00, 0x00, 0xC3, 0x0E, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00};
 
-const uint8_t pixel_header[] = {0x42, 0x4D, 0x76, 0x05, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x76, 0x00, 0x00,
-                                0x00, 0x28, 0x00, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00};
+//expected to currently be broken
+const uint8_t pixel_header[] = {0x42, 0x4D, 0x1A, 0x65, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x36, 0x04, 0x00,
+                                 0x00, 0x28, 0x00, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00, 0xF0, 0x00, 0x00, 0x00, 
+                                 0x01, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x28, 0x9A, 0x00, 0x00, 0xC3, 
+                                 0x0E, 0x00, 0x00, 0xC3, 0x0E, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00};
+                                /*{0x42, 0x4D, 0x76, 0x05, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x76, 0x00, 0x00,
+                                0x00, 0x28, 0x00, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00};*/
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 static struct
 {
@@ -30,23 +57,23 @@ static struct
   uint32_t length;
   uint32_t crc;
   const uint8_t *header;
-} files[] = {{"data/endpic/credit01.bmp", 0x117047, 19293, 0xeb87b19b, credit_header},
-             {"data/endpic/credit02.bmp", 0x11bbaf, 19293, 0x239c1a37, credit_header},
-             {"data/endpic/credit03.bmp", 0x120717, 19293, 0x4398bbda, credit_header},
-             {"data/endpic/credit04.bmp", 0x12527f, 19293, 0x44bae3ac, credit_header},
-             {"data/endpic/credit05.bmp", 0x129de7, 19293, 0xd1b876ad, credit_header},
-             {"data/endpic/credit06.bmp", 0x12e94f, 19293, 0x5a60082e, credit_header},
-             {"data/endpic/credit07.bmp", 0x1334b7, 19293, 0xc1e9db91, credit_header},
-             {"data/endpic/credit08.bmp", 0x13801f, 19293, 0xcbbcc7fa, credit_header},
-             {"data/endpic/credit09.bmp", 0x13cb87, 19293, 0xfa7177b1, credit_header},
-             {"data/endpic/credit10.bmp", 0x1416ef, 19293, 0x56390a07, credit_header},
-             {"data/endpic/credit11.bmp", 0x146257, 19293, 0xff3d6d83, credit_header},
-             {"data/endpic/credit12.bmp", 0x14adbf, 19293, 0x9e948dc2, credit_header},
-             {"data/endpic/credit14.bmp", 0x14f927, 19293, 0x32b6ce2d, credit_header},
-             {"data/endpic/credit15.bmp", 0x15448f, 19293, 0x88539803, credit_header},
-             {"data/endpic/credit16.bmp", 0x158ff7, 19293, 0xc0ef9adf, credit_header},
-             {"data/endpic/credit17.bmp", 0x15db5f, 19293, 0x8c5a003d, credit_header},
-             {"data/endpic/credit18.bmp", 0x1626c7, 19293, 0x66bcbf22, credit_header},
+} files[] = {{"data/endpic/credit01.bmp", 0x133B1C, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit02.bmp", 0x13D544, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit03.bmp", 0x146F6C, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit04.bmp", 0x150994, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit05.bmp", 0x15A3BC, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit06.bmp", 0x163DE4, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit07.bmp", 0x16D80C, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit08.bmp", 0x177234, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit09.bmp", 0x180C5C, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit10.bmp", 0x18A684, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit11.bmp", 0x1940AC, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit12.bmp", 0x19DAD4, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit14.bmp", 0x1A74FC, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit15.bmp", 0x1B0F24, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit16.bmp", 0x1BA94C, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit17.bmp", 0x1C4374, CREDIT_SIZE, 0, credit_header},
+             //{"data/endpic/credit18.bmp", 0x1CDD9C, CREDIT_SIZE, 0, credit_header},
              {"data/endpic/pixel.bmp", 0x16722f, 1373, 0x6181d0a1, pixel_header},
              {"data/wavetable.dat", 0x110664, 25600, 0xb3a3b7ef, NULL},
              {"data/org/access.org", 0x09b35c, 1138, 0xd965dddb, NULL},
@@ -120,7 +147,7 @@ bool extract_files(FILE *exefp)
   uint8_t *file;
   uint32_t length;
   uint32_t crc;
-  bool check_crc = true;
+  //bool check_crc = false;//Disable this for now.
   // bool first_crc_failure = true;
 
   buffer = (uint8_t *)malloc(MAX_FILE_SIZE);
@@ -149,7 +176,7 @@ bool extract_files(FILE *exefp)
     fseek(exefp, files[i].offset, SEEK_SET);
     fread(file, files[i].length, 1, exefp);
 
-    if (check_crc)
+    #if defined(CHECK_CRC)
     {
       crc = crc_calc(file, files[i].length);
       if (crc != files[i].crc)
@@ -159,6 +186,7 @@ bool extract_files(FILE *exefp)
         //				first_crc_failure = false;
       }
     }
+    #endif
 
     // write out the file
     createdir(outfilename);

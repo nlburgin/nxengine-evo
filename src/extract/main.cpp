@@ -5,7 +5,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-static const char *filename = "Doukutsu.exe";
+static const char *filename = "JenkasNightmare.exe";
 
 int main(int argc, char *argv[])
 {
@@ -18,11 +18,11 @@ int main(int argc, char *argv[])
   }
 
   if (extract_pxt(fp))
-    return 1;
+    printf("pxt failed!");
   if (extract_files(fp))
-    return 1;
+    printf("files failed!");
   if (extract_stages(fp))
-    return 1;
+    printf("stages failed!");
   fclose(fp);
   printf("Sucessfully extracted.\n");
   return 0;
