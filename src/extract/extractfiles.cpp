@@ -56,7 +56,7 @@ static struct
              {"data/endpic/credit15.bmp", 0x1B0F24, CREDIT_SIZE, 0, credit_header},
              {"data/endpic/credit16.bmp", 0x1BA94C, CREDIT_SIZE, 0, credit_header},
              {"data/endpic/credit17.bmp", 0x1C4374, CREDIT_SIZE, 0, credit_header},
-             //{"data/endpic/credit18.bmp", 0x1CDD9C, CREDIT_SIZE, 0, credit_header},
+             {"data/endpic/credit18.bmp", 0x1CDD9C, CREDIT_SIZE, 0, credit_header},
              {"data/endpic/pixel.bmp", 0x16722f, 1373, 0, pixel_header},//broken right now.
              {"data/wavetable.dat", 0x12D11C, 25600, 0xb3a3b7ef, NULL},
              {"data/org/access.org", 664412, 16988, 0, NULL}, //"Halloween 2"
