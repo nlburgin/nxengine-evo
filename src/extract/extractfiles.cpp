@@ -57,14 +57,14 @@ static struct
              {"data/endpic/credit16.bmp", 0x1BA94C, CREDIT_SIZE, 0, credit_header},
              {"data/endpic/credit17.bmp", 0x1C4374, CREDIT_SIZE, 0, credit_header},
              //{"data/endpic/credit18.bmp", 0x1CDD9C, CREDIT_SIZE, 0, credit_header},
-             {"data/endpic/pixel.bmp", 0x16722f, 1373, 0, pixel_header},
+             {"data/endpic/pixel.bmp", 0x16722f, 1373, 0, pixel_header},//broken right now.
              {"data/wavetable.dat", 0x12D11C, 25600, 0xb3a3b7ef, NULL},
-             {"data/org/access.org", 664412, 16988, 0, NULL},
+             {"data/org/access.org", 664412, 16988, 0, NULL}, //"Halloween 2"
              {"data/org/balcony.org", 690596, 3082, 0, NULL},
-             {"data/org/ginsuke.org", 779108, 5970, 0, NULL},
+             {"data/org/ginsuke.org", 780248, 5970, 0, NULL},
              {"data/org/bdown.org", 697252, 2570, 0, NULL},
              {"data/org/cemetery.org", 699824, 4578, 0, NULL},
-             {"data/org/lastbtl.org", 903948, 27212, 0, NULL},
+             {"data/org/lastbtl.org", 903948, 27212, 0, NULL}, //"Recharge", a massively extended remix of the original
              {"data/org/ending.org", 716412, 17898, 0, NULL},
              {"data/org/wanpaku.org", 1160664, 19626, 0, NULL},
              {"data/org/fireeye.org", 757752, 21354, 0, NULL},
@@ -77,7 +77,7 @@ static struct
              {"data/org/gravity.org", 799688, 20578, 0, NULL},
              {"data/org/weed.org", 1180292, 23706, 0, NULL},
              {"data/org/hell.org", 820268, 18386, 0, NULL},
-             {"data/org/requiem.org", 1054536, 61188, 0, NULL}, //it's huge!?
+             {"data/org/requiem.org", 1054536, 61188, 0, NULL}, //secret track? Title unknown. Wasn't in Jenka's Organya. Also, it's huge.
              {"data/org/jenka.org", 852108, 8306, 0, NULL},
              {"data/org/jenka2.org", 860416, 11986, 0, NULL},
              {"data/org/maze.org", 966248, 14786, 0, NULL},
@@ -89,11 +89,11 @@ static struct
              {"data/org/plant.org", 1038384, 11378, 0, NULL},
              {"data/org/kodou.org", 872404, 10418, 0, NULL},
              {"data/org/quiet.org", 1049764, 4770, 0, NULL},
-             {"data/org/escape.org", 779108, 5970, 0, NULL}, //FIXME, this is supposed to be Desperation but I can't find the offset.
+             {"data/org/escape.org", 734312, 20524, 0, NULL},//"Desperation"
              {"data/org/anzen.org", 681400, 9194, 0, NULL},
              {"data/org/wanpak2.org", 1144668, 15994, 0, NULL},
              {"data/org/ballos.org", 693680, 3570, 0, NULL},
-             {"data/org/curly.org", 704404, 9844, 0, NULL},
+             {"data/org/curly.org", 704404, 9844, 0, NULL}, //"Pier Walk"
              {"data/org/toroko.org", 1115724, 18482, 0, NULL},
              {"data/org/mura.org", 1002112, 10634, 0, NULL},
              {"data/org/dr.org", 714248, 2162, 0, NULL},
