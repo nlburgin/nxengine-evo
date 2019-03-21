@@ -64,7 +64,7 @@ static struct
              {"data/org/ginsuke.org", 779108, 5970, 0, NULL},
              {"data/org/bdown.org", 697252, 2570, 0, NULL},
              {"data/org/cemetery.org", 699824, 4578, 0, NULL},
-             {"data/org/lastbtl.org", 299892, 27212, 0, NULL},
+             {"data/org/lastbtl.org", 903948, 27212, 0, NULL},
              {"data/org/ending.org", 716412, 17898, 0, NULL},
              {"data/org/wanpaku.org", 1160664, 19626, 0, NULL},
              {"data/org/fireeye.org", 757752, 21354, 0, NULL},
