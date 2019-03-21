@@ -89,7 +89,7 @@ static struct
              {"data/org/plant.org", 1038384, 11378, 0, NULL},
              {"data/org/kodou.org", 872404, 10418, 0, NULL},
              {"data/org/quiet.org", 1049764, 4770, 0, NULL},
-             {"data/org/escape.org", 779108, 5970, 0, NULL}, //wrong, FIXME PLEASE. Unless this track isn't in JN at all?
+             {"data/org/escape.org", 779108, 5970, 0, NULL}, //FIXME, this is supposed to be Desperation but I can't find the offset.
              {"data/org/anzen.org", 681400, 9194, 0, NULL},
              {"data/org/wanpak2.org", 1144668, 15994, 0, NULL},
              {"data/org/ballos.org", 693680, 3570, 0, NULL},
