@@ -32,30 +32,13 @@ const uint8_t pixel_header[] = {0x42, 0x4D, 0x1A, 0x65, 0x0A, 0x00, 0x00, 0x00, 
                                 /*{0x42, 0x4D, 0x76, 0x05, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x76, 0x00, 0x00,
                                 0x00, 0x28, 0x00, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00};*/
 
-                                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 static struct
 {
   const char *filename;
   uint32_t offset;
   uint32_t length;
-  uint32_t crc;
+  uint32_t crc; //unused
   const uint8_t *header;
 } files[] = {{"data/endpic/credit01.bmp", 0x133B1C, CREDIT_SIZE, 0, credit_header},
              {"data/endpic/credit02.bmp", 0x13D544, CREDIT_SIZE, 0, credit_header},
@@ -74,49 +57,49 @@ static struct
              {"data/endpic/credit16.bmp", 0x1BA94C, CREDIT_SIZE, 0, credit_header},
              {"data/endpic/credit17.bmp", 0x1C4374, CREDIT_SIZE, 0, credit_header},
              //{"data/endpic/credit18.bmp", 0x1CDD9C, CREDIT_SIZE, 0, credit_header},
-             {"data/endpic/pixel.bmp", 0x16722f, 1373, 0x6181d0a1, pixel_header},
-             {"data/wavetable.dat", 0x110664, 25600, 0xb3a3b7ef, NULL},
-             {"data/org/access.org", 0x09b35c, 1138, 0xd965dddb, NULL},
-             {"data/org/balcony.org", 0x09dbbc, 3082, 0x892345ca, NULL},
-             {"data/org/ginsuke.org", 0x0b45a0, 5970, 0xb02093b8, NULL},
-             {"data/org/bdown.org", 0x09f5bc, 2570, 0xf80dd62a, NULL},
-             {"data/org/cemetery.org", 0x09ffc8, 4578, 0x2ce377cc, NULL},
-             {"data/org/lastbtl.org", 0x0d28d4, 2770, 0x10dec9d5, NULL},
-             {"data/org/ending.org", 0x0a7eac, 17898, 0xa9ed4834, NULL},
-             {"data/org/wanpaku.org", 0x0feb20, 19626, 0xb651047e, NULL},
-             {"data/org/fireeye.org", 0x0aedc0, 21354, 0x6b5ff989, NULL},
-             {"data/org/fanfale1.org", 0x0ae25c, 914, 0xaefd547b, NULL},
-             {"data/org/fanfale2.org", 0x0ae98c, 1074, 0x3a5170a6, NULL},
-             {"data/org/fanfale3.org", 0x0ae5f0, 922, 0x85813929, NULL},
-             {"data/org/gameover.org", 0x0b412c, 1138, 0x1f87b446, NULL},
-             {"data/org/grand.org", 0x0b5cf4, 13466, 0xdb4795ac, NULL},
-             {"data/org/vivi.org", 0x0f83c8, 10458, 0xce2e68c1, NULL},
-             {"data/org/gravity.org", 0x0b9190, 20578, 0x64a9318d, NULL},
-             {"data/org/weed.org", 0x1037cc, 23706, 0xa27883b6, NULL},
-             {"data/org/hell.org", 0x0be1f4, 18386, 0x93bbf277, NULL},
-             {"data/org/requiem.org", 0x0f1598, 9722, 0xfc64d0d0, NULL},
-             {"data/org/jenka.org", 0x0c5e54, 8306, 0xb42d7eaa, NULL},
-             {"data/org/jenka2.org", 0x0c7ec8, 11986, 0xc095cbe1, NULL},
-             {"data/org/maze.org", 0x0dbcb8, 14786, 0x0292cf2c, NULL},
-             {"data/org/lastbt3.org", 0x0cd650, 21122, 0x8888dac9, NULL},
-             {"data/org/lastcave.org", 0x0d33a8, 18122, 0x469b38b9, NULL},
-             {"data/org/mdown2.org", 0x0df67c, 21074, 0x83d08aed, NULL},
-             {"data/org/ironh.org", 0x0c29c8, 13450, 0x3ce4cdbe, NULL},
-             {"data/org/oside.org", 0x0e725c, 25634, 0x1e33b095, NULL},
-             {"data/org/plant.org", 0x0ed680, 11378, 0x3911e040, NULL},
-             {"data/org/kodou.org", 0x0cad9c, 10418, 0x92ef0330, NULL},
-             {"data/org/quiet.org", 0x0f02f4, 4770, 0x0e95a468, NULL},
-             {"data/org/escape.org", 0x0ac498, 7618, 0x65a4bb85, NULL},
-             {"data/org/anzen.org", 0x09b7d0, 9194, 0x779e83c2, NULL},
-             {"data/org/wanpak2.org", 0x0faca4, 15994, 0xd09341e2, NULL},
-             {"data/org/ballos.org", 0x09e7c8, 3570, 0x373988ad, NULL},
-             {"data/org/curly.org", 0x0a11ac, 25738, 0xf5ace8b0, NULL},
-             {"data/org/toroko.org", 0x0f3b94, 18482, 0xc202de07, NULL},
-             {"data/org/mura.org", 0x0e48d0, 10634, 0x6a6aa627, NULL},
-             {"data/org/dr.org", 0x0a7638, 2162, 0xc64dc450, NULL},
-             {"data/org/marine.org", 0x0d7a74, 16962, 0xb533d72a, NULL},
-             {"data/org/white.org", 0x109468, 23714, 0xcff0fb34, NULL},
-             {"data/org/zonbie.org", 0x10f180, 5346, 0xd217cc29, NULL},
+             {"data/endpic/pixel.bmp", 0x16722f, 1373, 0, pixel_header},
+             {"data/wavetable.dat", 0x12D11C, 25600, 0xb3a3b7ef, NULL},
+             {"data/org/access.org", 664412, 16988, 0, NULL},
+             {"data/org/balcony.org", 690596, 3082, 0, NULL},
+             {"data/org/ginsuke.org", 779108, 5970, 0, NULL},
+             {"data/org/bdown.org", 697252, 2570, 0, NULL},
+             {"data/org/cemetery.org", 699824, 4578, 0, NULL},
+             {"data/org/lastbtl.org", 299892, 27212, 0, NULL},
+             {"data/org/ending.org", 716412, 17898, 0, NULL},
+             {"data/org/wanpaku.org", 1160664, 19626, 0, NULL},
+             {"data/org/fireeye.org", 757752, 21354, 0, NULL},
+             {"data/org/fanfale1.org", 754836, 914, 0, NULL},
+             {"data/org/fanfale2.org", 755752, 1074,0, NULL},
+             {"data/org/fanfale3.org", 756676, 922, 0, NULL},
+             {"data/org/gameover.org", 779108, 1138, 0, NULL},
+             {"data/org/grand.org", 786220, 13466, 0, NULL},
+             {"data/org/vivi.org", 1134208, 10458, 0, NULL},
+             {"data/org/gravity.org", 799688, 20578, 0, NULL},
+             {"data/org/weed.org", 1180292, 23706, 0, NULL},
+             {"data/org/hell.org", 820268, 18386, 0, NULL},
+             {"data/org/requiem.org", 1054536, 61188, 0, NULL}, //it's huge!?
+             {"data/org/jenka.org", 852108, 8306, 0, NULL},
+             {"data/org/jenka2.org", 860416, 11986, 0, NULL},
+             {"data/org/maze.org", 966248, 14786, 0, NULL},
+             {"data/org/lastbt3.org", 882824, 21122, 0, NULL},
+             {"data/org/lastcave.org", 931160, 18122, 0, NULL},
+             {"data/org/mdown2.org", 981036, 21074, 0, NULL},
+             {"data/org/ironh.org", 838656, 13450, 0, NULL},
+             {"data/org/oside.org", 1012748, 25634, 0, NULL},
+             {"data/org/plant.org", 1038384, 11378, 0, NULL},
+             {"data/org/kodou.org", 872404, 10418, 0, NULL},
+             {"data/org/quiet.org", 1049764, 4770, 0, NULL},
+             {"data/org/escape.org", 779108, 5970, 0, NULL}, //wrong, FIXME PLEASE. Unless this track isn't in JN at all?
+             {"data/org/anzen.org", 681400, 9194, 0, NULL},
+             {"data/org/wanpak2.org", 1144668, 15994, 0, NULL},
+             {"data/org/ballos.org", 693680, 3570, 0, NULL},
+             {"data/org/curly.org", 704404, 9844, 0, NULL},
+             {"data/org/toroko.org", 1115724, 18482, 0, NULL},
+             {"data/org/mura.org", 1002112, 10634, 0, NULL},
+             {"data/org/dr.org", 714248, 2162, 0, NULL},
+             {"data/org/marine.org", 949284, 16962, 0, NULL},
+             {"data/org/white.org", 1204000, 23714, 0, NULL},
+             {"data/org/zonbie.org", 1227832, 5346, 0, NULL},
              {NULL, 0, 0, 0, NULL}};
 
 void createdir(const char *fname)
