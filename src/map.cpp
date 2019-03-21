@@ -567,7 +567,7 @@ static bool LoadBackdropIfNeeded(int backdrop_no)
     }
     else
     {
-      fname = std::string(backdrop_names[backdrop_no]) + ".pbm";
+      fname = std::string(backdrop_names[backdrop_no]) + ".jnb";
     }
 
     backdrop[backdrop_no] = NXSurface::FromFile(ResourceManager::getInstance()->getLocalizedPath(fname), use_chromakey);

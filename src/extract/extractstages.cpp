@@ -79,28 +79,28 @@ bool extract_stages(FILE *exefp)
     if (mapdata[i].tileset == 0xff)
     {
       error = "tileset";
-      break;
+      //break;
     }
 
     mapdata[i].bg_no = find_index(exemapdata[i].background, backdrop_names);
     if (mapdata[i].bg_no == 0xff)
     {
       error = "backdrop";
-      break;
+      //break;
     }
 
     mapdata[i].NPCset1 = find_index(exemapdata[i].NPCset1, npcsetnames);
     if (mapdata[i].NPCset1 == 0xff)
     {
       error = "NPCset1";
-      break;
+      //break;
     }
 
     mapdata[i].NPCset2 = find_index(exemapdata[i].NPCset2, npcsetnames);
     if (mapdata[i].NPCset2 == 0xff)
     {
       error = "NPCset2";
-      break;
+      //break;
     }
   }
 
@@ -109,7 +109,7 @@ bool extract_stages(FILE *exefp)
     printf("didn't recognize map %s name\n", error);
     printf("on stage %d\n", i);
 
-    return 1;
+    //return 1;
   }
 
   // write out
