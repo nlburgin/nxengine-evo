@@ -10,8 +10,8 @@
 #include <cstring>
 #include <sys/stat.h>
 
-#define NMAPS 95
-#define DATA_OFFSET 0x937B0
+#define NMAPS 125
+#define DATA_OFFSET 0x9A000
 
 #if defined(_WIN32)
 #define strcasecmp _stricmp

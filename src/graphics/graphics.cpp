@@ -296,7 +296,7 @@ void Graphics::ShowLoadingScreen()
 {
   NXSurface loading;
 
-  if (loading.LoadImage(ResourceManager::getInstance()->getLocalizedPath("Loading.pbm")))
+  if (loading.LoadImage(ResourceManager::getInstance()->getLocalizedPath("Loading.jnb")))
     return;
 
   int x = (Graphics::SCREEN_WIDTH / 2) - (loading.Width() / 2);

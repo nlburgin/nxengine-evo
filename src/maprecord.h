@@ -37,6 +37,6 @@ extern int num_stages;
 #define STAGE_SEAL_CHAMBER 87
 #define STAGE_SEAL_CHAMBER_2 92
 #define STAGE_CORRIDOR 88
-#define STAGE_KINGS 72 // intro
+#define STAGE_KINGS 01 // intro
 
 #endif
