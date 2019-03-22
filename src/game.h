@@ -20,7 +20,14 @@
 #define ALLDIRMASK (LEFTMASK | RIGHTMASK | UPMASK | DOWNMASK)
 
 // highest addressable flag by tsc scripts etc
-#define NUM_GAMEFLAGS 8000
+/*    I increased this from 8000 because
+I noticed a script in JN calling <FL-8510.
+I dunno if that means it has a larger flag array,
+or if it's trying to do out-of-bounds memory shenanigans.
+If it's the former, we should support that.
+And if it's the latter, we should at least block it,
+because it would likely just segfault here.*/
+#define NUM_GAMEFLAGS 9999
 
 // switchstage.mapno is set to this to load a game
 #define MAPNO_SPECIALS 1000
