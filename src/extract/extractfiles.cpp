@@ -76,7 +76,7 @@ static struct
              {"data/org/gravity.org", 799688, 20578, 0, NULL},
              {"data/org/weed.org", 1180292, 23706, 0, NULL},
              {"data/org/hell.org", 820268, 18386, 0, NULL},
-             {"data/org/requiem.org", 1054536, 61188, 0, NULL}, //secret track? Title unknown. Wasn't in Jenka's Organya. Also, it's huge.
+             {"data/org/requiem.org", 1054536, 61188, 0, NULL},//Super Secret Easter Egg Track
              {"data/org/jenka.org", 852108, 8306, 0, NULL},
              {"data/org/jenka2.org", 860416, 11986, 0, NULL},
              {"data/org/maze.org", 966248, 14786, 0, NULL},
