@@ -157,8 +157,8 @@ void aftermove_blade_l12_shot(Object *o)
     Object *enemy;
     if ((enemy = damage_enemies(o)))
     {
-      // on level 2 we can deal damage up to 3 times (18 max)
-      if (level == 0 || ++o->timer2 >= 3 || (enemy->flags & FLAG_INVULNERABLE))
+      // on level 2 we can deal damage up to 2 times (18 max)
+      if (level == 0 || ++o->timer2 >= 2 || (enemy->flags & FLAG_INVULNERABLE))
       {
         o->Delete();
         return;
